@@ -1,0 +1,1341 @@
+{
+  "cards": [
+    {
+      "spanish_full": "Gato",
+      "article": "El",
+      "english": "",
+      "image": "cat.jpg",
+      "audio": "el_gato_serena.mp3",
+      "sentences": [
+        {
+          "text": "El gato es un animal curioso.",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "spanish_full": "Agua",
+      "article": "El",
+      "english": "",
+      "image": "thewater.jpg",
+      "audio": "el_agua_serena.mp3",
+      "sentences": [
+        {
+          "text": "El agua mineral es natural y fresca.",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "spanish_full": "Hospital",
+      "article": "El",
+      "english": "",
+      "image": "thehospital.jpg",
+      "audio": "el_hospital_serena.mp3",
+      "sentences": []
+    },
+    {
+      "spanish_full": "Chocolate",
+      "article": "El",
+      "english": "",
+      "image": "chocolate.jpg",
+      "audio": "el_chocolate_serena.mp3",
+      "sentences": [
+        {
+          "text": "El chocolate es mi dulce favorito.",
+          "image": "chocolate_sentence_0_1769244579.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Teléfono",
+      "article": "El",
+      "english": "",
+      "image": "thetelephone.png",
+      "audio": "el_telefono_serena.mp3",
+      "sentences": [
+        {
+          "text": "El teléfono es un objeto importante.",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "spanish_full": "Pizza",
+      "article": "La",
+      "english": "",
+      "image": "thepizza.jpg",
+      "audio": "la_pizza_serena.mp3",
+      "sentences": [
+        {
+          "text": "La pizza tiene queso y tomates.",
+          "image": "pizza_sentence_0_1769244981.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Banana",
+      "article": "La",
+      "english": "",
+      "image": "thebanana.png",
+      "audio": "la_banana_serena.mp3",
+      "sentences": [
+        {
+          "text": "La banana es una fruta tropical.",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "spanish_full": "Huevo",
+      "article": "El",
+      "english": "",
+      "image": "egg.png",
+      "audio": "el_huevo_serena.mp3",
+      "sentences": [
+        {
+          "text": "El huevo es un producto natural y delicioso.",
+          "image": "huevo_cognate_sentence_1769751908.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Helado",
+      "article": "El",
+      "english": "",
+      "image": "icecream.jpg",
+      "audio": "el_helado_serena.mp3",
+      "sentences": [
+        {
+          "text": "El helado es de chocolate.",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "spanish_full": "Botella",
+      "article": "La",
+      "english": "",
+      "image": "bottle.jpg",
+      "audio": "la_botella_serena.mp3",
+      "sentences": []
+    },
+    {
+      "spanish_full": "casa",
+      "article": "La",
+      "english": "",
+      "image": "thehouse.jpg",
+      "audio": "la_casa_serena.mp3",
+      "sentences": [
+        {
+          "text": "La casa de mi familia es especial.",
+          "image": "casa_cognate_sentence_1769752152.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "libro",
+      "article": "El",
+      "english": "",
+      "image": "thebook.jpg",
+      "audio": "el_libro_serena.mp3",
+      "sentences": [
+        {
+          "text": "El libro tiene información interesante.",
+          "image": "libro_cognate_sentence_1769752264.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "puerta",
+      "article": "La",
+      "english": "",
+      "image": "thedoor.jpg",
+      "audio": "la_puerta_serena.mp3",
+      "sentences": [
+        {
+          "text": "La puerta del restaurante es diferente.",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "spanish_full": "mesa",
+      "article": "La",
+      "english": "",
+      "image": "thetable.jpg",
+      "audio": "la_mesa_serena.mp3",
+      "sentences": [
+        {
+          "text": "La mesa del restaurante es elegante.",
+          "image": "mesa_cognate_sentence_1769752397.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "silla",
+      "article": "La",
+      "english": "",
+      "image": "thechair.jpg",
+      "audio": "la_silla_serena.mp3",
+      "sentences": [
+        {
+          "text": "La silla del restaurante es elegante.",
+          "image": "silla_cognate_sentence_1769752424.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "coche",
+      "article": "El",
+      "english": "",
+      "image": "thecar.jpg",
+      "audio": "el_coche_serena.mp3",
+      "sentences": [
+        {
+          "text": "El coche tiene un motor excelente.",
+          "image": "coche_cognate_sentence_1769752449.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "pan",
+      "article": "El",
+      "english": "",
+      "image": "bread.jpg",
+      "audio": "el_pan_serena.mp3",
+      "sentences": [
+        {
+          "text": "El pan del café es delicioso.",
+          "image": "pan_cognate_sentence_1769752634.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "leche",
+      "article": "La",
+      "english": "",
+      "image": "milk.png",
+      "audio": "la_leche_serena.mp3",
+      "sentences": [
+        {
+          "text": "La leche es un producto natural.",
+          "image": "leche_cognate_sentence_1769752658.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "manzana",
+      "article": "La",
+      "english": "",
+      "image": "theapple.jpg",
+      "audio": "la_manzana_serena.mp3",
+      "sentences": [
+        {
+          "text": "La manzana es una fruta natural y deliciosa.",
+          "image": "manzana_cognate_sentence_1769752718.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "reloj",
+      "article": "El",
+      "english": "",
+      "image": "theclock.jpg",
+      "audio": "el_reloj_serena.mp3",
+      "sentences": [
+        {
+          "text": "El reloj es un objeto importante y personal.",
+          "image": "reloj_cognate_sentence_1769752910.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "llave",
+      "article": "La",
+      "english": "",
+      "image": "thekey.jpg",
+      "audio": "la_llave_serena.mp3",
+      "sentences": [
+        {
+          "text": "La llave del hotel está en la mesa.",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "spanish_full": "cama",
+      "article": "La",
+      "english": "",
+      "image": "thebed.jpg",
+      "audio": "la_cama_serena.mp3",
+      "sentences": [
+        {
+          "text": "La cama del hospital es muy especial.",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "spanish_full": "Perro",
+      "article": "El",
+      "english": "",
+      "image": "dog.jpg",
+      "audio": "el_perro_serena.mp3",
+      "sentences": [
+        {
+          "text": "El perro es un animal excelente.",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "spanish_full": "Parque",
+      "article": "El",
+      "english": "",
+      "image": "thepark.jpg",
+      "audio": "el_parque_serena.mp3",
+      "sentences": [
+        {
+          "text": "El parque natural es enorme.",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "spanish_full": "Restaurante",
+      "article": "El",
+      "english": "",
+      "image": "therestaurant_primary.jpg",
+      "audio": "el_restaurante_serena.mp3",
+      "sentences": [
+        {
+          "text": "El restaurante tiene un menú especial.",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "spanish_full": "guitarra",
+      "article": "La",
+      "english": "",
+      "image": "theguitar.jpg",
+      "audio": "la_guitarra_serena.mp3",
+      "sentences": [
+        {
+          "text": "La guitarra tiene un sonido especial.",
+          "image": ""
+        },
+        {
+          "text": "Yo toco la guitarra.",
+          "image": "guitarra_sentence_0_1769249555.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Plato",
+      "article": "El",
+      "english": "",
+      "image": "",
+      "audio": "el_plato_serena.mp3",
+      "sentences": [
+        {
+          "text": "Me gusta el plato de chocolate.",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "spanish_full": "Taza",
+      "article": "La",
+      "english": "",
+      "image": "",
+      "audio": "la_taza_serena.mp3",
+      "sentences": [
+        {
+          "text": "La taza tiene café caliente.",
+          "image": "taza_sentence_0_1769250381.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Zapato",
+      "article": "El",
+      "english": "",
+      "image": "",
+      "audio": "el_zapato_serena.mp3",
+      "sentences": [
+        {
+          "text": "\"El zapato tiene un diseño excelente.\"",
+          "image": ""
+        },
+        {
+          "text": "El zapato tiene un color diferente.",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "spanish_full": "Queso",
+      "article": "El",
+      "english": "",
+      "image": "the_cheese.jpg",
+      "audio": "el_queso_serena.mp3",
+      "sentences": [
+        {
+          "text": "\"El queso es parte de la pasta.\"",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "spanish_full": "manzana",
+      "article": "",
+      "english": "apple",
+      "image": "",
+      "audio": "",
+      "sentences": [
+        {
+          "text": "La manzana es una fruta natural y deliciosa.",
+          "image": "manzana_cognate_sentence_1769753392.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "queso",
+      "article": "",
+      "english": "cheese",
+      "image": "",
+      "audio": "",
+      "sentences": [
+        {
+          "text": "El queso es un producto natural.",
+          "image": ""
+        }
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "internal_name": "single_words",
+      "description": "Pure vocabulary - match word to image",
+      "sentences": [],
+      "advance_threshold": {
+        "min_correct": 30,
+        "min_accuracy": 0.7
+      }
+    },
+    {
+      "id": 2,
+      "internal_name": "descriptions",
+      "description": "ser + adjective with cognates",
+      "sentences": [
+        {
+          "text": "El gato es un animal curioso.",
+          "target_noun": "Gato"
+        },
+        {
+          "text": "El perro es un animal especial.",
+          "target_noun": "Perro"
+        },
+        {
+          "text": "La casa es enorme y elegante.",
+          "target_noun": "casa"
+        },
+        {
+          "text": "El libro es interesante.",
+          "target_noun": "libro"
+        },
+        {
+          "text": "La mesa es de color natural.",
+          "target_noun": "mesa"
+        },
+        {
+          "text": "La silla es elegante.",
+          "target_noun": "silla"
+        },
+        {
+          "text": "El coche es un modelo perfecto.",
+          "target_noun": "coche"
+        },
+        {
+          "text": "La puerta es enorme.",
+          "target_noun": "puerta"
+        },
+        {
+          "text": "El zapato es elegante.",
+          "target_noun": "Zapato"
+        },
+        {
+          "text": "La guitarra es un instrumento especial.",
+          "target_noun": "guitarra"
+        },
+        {
+          "text": "La manzana es una fruta natural.",
+          "target_noun": "manzana"
+        },
+        {
+          "text": "El queso es delicioso.",
+          "target_noun": "Queso"
+        },
+        {
+          "text": "La pizza es deliciosa.",
+          "target_noun": "Pizza"
+        },
+        {
+          "text": "El chocolate es delicioso.",
+          "target_noun": "Chocolate"
+        },
+        {
+          "text": "La banana es una fruta tropical.",
+          "target_noun": "Banana"
+        },
+        {
+          "text": "El parque es enorme y natural.",
+          "target_noun": "Parque"
+        },
+        {
+          "text": "El restaurante es famoso.",
+          "target_noun": "Restaurante"
+        },
+        {
+          "text": "El hospital es importante.",
+          "target_noun": "Hospital"
+        },
+        {
+          "text": "El helado es delicioso.",
+          "target_noun": "Helado"
+        },
+        {
+          "text": "El pan es un producto natural.",
+          "target_noun": "pan"
+        },
+        {
+          "text": "El plato es de color diferente.",
+          "target_noun": "Plato"
+        },
+        {
+          "text": "La taza es de porcelana.",
+          "target_noun": "Taza"
+        },
+        {
+          "text": "La botella es transparente.",
+          "target_noun": "Botella"
+        },
+        {
+          "text": "El gato es un animal independiente.",
+          "target_noun": "Gato"
+        },
+        {
+          "text": "El perro es un animal inteligente.",
+          "target_noun": "Perro"
+        }
+      ],
+      "advance_threshold": {
+        "min_correct": 20,
+        "min_accuracy": 0.75
+      }
+    },
+    {
+      "id": 3,
+      "internal_name": "states",
+      "description": "estar + state/condition with cognates",
+      "sentences": [
+        {
+          "text": "El gato está tranquilo en el sofá.",
+          "target_noun": "Gato"
+        },
+        {
+          "text": "El perro está nervioso.",
+          "target_noun": "Perro"
+        },
+        {
+          "text": "El agua está a temperatura natural.",
+          "target_noun": "Agua"
+        },
+        {
+          "text": "La leche está en la parte central.",
+          "target_noun": "leche"
+        },
+        {
+          "text": "El helado está en una temperatura horrible.",
+          "target_noun": "Helado"
+        },
+        {
+          "text": "La puerta está en una posición normal.",
+          "target_noun": "puerta"
+        },
+        {
+          "text": "La casa está en una zona tropical.",
+          "target_noun": "casa"
+        },
+        {
+          "text": "El coche está en condición perfecta.",
+          "target_noun": "coche"
+        },
+        {
+          "text": "El gato está curioso.",
+          "target_noun": "Gato"
+        },
+        {
+          "text": "El perro está tranquilo.",
+          "target_noun": "Perro"
+        },
+        {
+          "text": "La silla está en una posición diferente.",
+          "target_noun": "silla"
+        },
+        {
+          "text": "La mesa está en el centro.",
+          "target_noun": "mesa"
+        },
+        {
+          "text": "El plato está en la parte central de la mesa.",
+          "target_noun": "Plato"
+        },
+        {
+          "text": "La taza está completamente vacía.",
+          "target_noun": "Taza"
+        },
+        {
+          "text": "La botella está prácticamente vacía.",
+          "target_noun": "Botella"
+        },
+        {
+          "text": "El teléfono está en modo normal.",
+          "target_noun": "Teléfono"
+        },
+        {
+          "text": "La puerta está totalmente cerrada.",
+          "target_noun": "puerta"
+        },
+        {
+          "text": "El libro está en una posición horizontal.",
+          "target_noun": "libro"
+        },
+        {
+          "text": "La cama está en condición perfecta.",
+          "target_noun": "cama"
+        },
+        {
+          "text": "El reloj está en una situación terrible.",
+          "target_noun": "reloj"
+        }
+      ],
+      "advance_threshold": {
+        "min_correct": 20,
+        "min_accuracy": 0.75
+      }
+    },
+    {
+      "id": 4,
+      "internal_name": "possession",
+      "description": "tener + noun with cognates",
+      "sentences": [
+        {
+          "text": "Tengo un gato, es mi animal favorito.",
+          "target_noun": "Gato"
+        },
+        {
+          "text": "Tengo un perro, es un animal especial.",
+          "target_noun": "Perro"
+        },
+        {
+          "text": "Tengo una casa con una vista espectacular.",
+          "target_noun": "casa"
+        },
+        {
+          "text": "Tengo un libro interesante.",
+          "target_noun": "libro"
+        },
+        {
+          "text": "Tengo un coche de color rojo.",
+          "target_noun": "coche"
+        },
+        {
+          "text": "Tengo una guitarra, es un instrumento increíble.",
+          "target_noun": "guitarra"
+        },
+        {
+          "text": "Tengo una manzana, es una fruta natural.",
+          "target_noun": "manzana"
+        },
+        {
+          "text": "Tengo una llave importante.",
+          "target_noun": "llave"
+        },
+        {
+          "text": "Tengo un teléfono moderno.",
+          "target_noun": "Teléfono"
+        },
+        {
+          "text": "Tengo un reloj elegante.",
+          "target_noun": "reloj"
+        },
+        {
+          "text": "Tiene un gato curioso.",
+          "target_noun": "Gato"
+        },
+        {
+          "text": "Tiene un perro inteligente.",
+          "target_noun": "Perro"
+        },
+        {
+          "text": "Tiene un coche perfecto.",
+          "target_noun": "coche"
+        },
+        {
+          "text": "Tiene una guitarra profesional.",
+          "target_noun": "guitarra"
+        },
+        {
+          "text": "Tengo un zapato elegante.",
+          "target_noun": "Zapato"
+        },
+        {
+          "text": "Tengo agua mineral.",
+          "target_noun": "Agua"
+        },
+        {
+          "text": "Tengo leche natural.",
+          "target_noun": "leche"
+        },
+        {
+          "text": "Tengo pan delicioso.",
+          "target_noun": "pan"
+        },
+        {
+          "text": "Tengo queso francés, es delicioso.",
+          "target_noun": "Queso"
+        },
+        {
+          "text": "Tengo chocolate, es mi favorito.",
+          "target_noun": "Chocolate"
+        },
+        {
+          "text": "Tiene un plato de porcelana.",
+          "target_noun": "Plato"
+        },
+        {
+          "text": "Tengo una taza de color diferente.",
+          "target_noun": "Taza"
+        },
+        {
+          "text": "Tengo una botella de agua mineral.",
+          "target_noun": "Botella"
+        },
+        {
+          "text": "Tiene un huevo natural.",
+          "target_noun": "Huevo"
+        },
+        {
+          "text": "Tengo una banana tropical.",
+          "target_noun": "Banana"
+        }
+      ],
+      "advance_threshold": {
+        "min_correct": 20,
+        "min_accuracy": 0.75
+      }
+    },
+    {
+      "id": 5,
+      "internal_name": "negation",
+      "description": "no + verb with cognates",
+      "sentences": [
+        {
+          "text": "No tengo un gato, es un problema.",
+          "target_noun": "Gato"
+        },
+        {
+          "text": "No tengo un perro, es terrible.",
+          "target_noun": "Perro"
+        },
+        {
+          "text": "No tengo un coche, es un problema enorme.",
+          "target_noun": "coche"
+        },
+        {
+          "text": "No tengo una llave, es horrible.",
+          "target_noun": "llave"
+        },
+        {
+          "text": "No tengo un libro interesante.",
+          "target_noun": "libro"
+        },
+        {
+          "text": "No tengo agua mineral.",
+          "target_noun": "Agua"
+        },
+        {
+          "text": "No tengo leche natural.",
+          "target_noun": "leche"
+        },
+        {
+          "text": "El queso no es delicioso.",
+          "target_noun": "Queso"
+        },
+        {
+          "text": "La casa no es elegante.",
+          "target_noun": "casa"
+        },
+        {
+          "text": "La leche no está a temperatura normal.",
+          "target_noun": "leche"
+        },
+        {
+          "text": "El gato no está tranquilo.",
+          "target_noun": "Gato"
+        },
+        {
+          "text": "El perro no es un animal agresivo.",
+          "target_noun": "Perro"
+        },
+        {
+          "text": "La puerta no está en posición normal.",
+          "target_noun": "puerta"
+        },
+        {
+          "text": "No tengo un teléfono moderno.",
+          "target_noun": "Teléfono"
+        },
+        {
+          "text": "No tengo una guitarra profesional.",
+          "target_noun": "guitarra"
+        },
+        {
+          "text": "La silla no es cómoda, es terrible.",
+          "target_noun": "silla"
+        },
+        {
+          "text": "No tengo chocolate, es horrible.",
+          "target_noun": "Chocolate"
+        },
+        {
+          "text": "No tengo helado, es un problema.",
+          "target_noun": "Helado"
+        },
+        {
+          "text": "La pizza no es deliciosa.",
+          "target_noun": "Pizza"
+        },
+        {
+          "text": "No tengo un plato de porcelana.",
+          "target_noun": "Plato"
+        }
+      ],
+      "advance_threshold": {
+        "min_correct": 20,
+        "min_accuracy": 0.8
+      }
+    },
+    {
+      "id": 6,
+      "internal_name": "questions",
+      "description": "interrogative form with cognates",
+      "sentences": [
+        {
+          "text": "¿Tienes un animal favorito? El gato.",
+          "target_noun": "Gato"
+        },
+        {
+          "text": "¿El perro es un animal inteligente?",
+          "target_noun": "Perro"
+        },
+        {
+          "text": "¿Tienes un coche perfecto?",
+          "target_noun": "coche"
+        },
+        {
+          "text": "¿Tienes una llave importante?",
+          "target_noun": "llave"
+        },
+        {
+          "text": "¿El libro es interesante?",
+          "target_noun": "libro"
+        },
+        {
+          "text": "¿La casa es elegante?",
+          "target_noun": "casa"
+        },
+        {
+          "text": "¿El agua es mineral?",
+          "target_noun": "Agua"
+        },
+        {
+          "text": "¿El queso es delicioso?",
+          "target_noun": "Queso"
+        },
+        {
+          "text": "¿La puerta está en posición normal?",
+          "target_noun": "puerta"
+        },
+        {
+          "text": "¿Tienes un teléfono moderno?",
+          "target_noun": "Teléfono"
+        },
+        {
+          "text": "¿La guitarra es un instrumento especial?",
+          "target_noun": "guitarra"
+        },
+        {
+          "text": "¿La manzana es una fruta natural?",
+          "target_noun": "manzana"
+        },
+        {
+          "text": "¿La pizza es deliciosa?",
+          "target_noun": "Pizza"
+        },
+        {
+          "text": "¿El chocolate es tu favorito?",
+          "target_noun": "Chocolate"
+        },
+        {
+          "text": "¿El helado es delicioso?",
+          "target_noun": "Helado"
+        },
+        {
+          "text": "¿El parque es enorme?",
+          "target_noun": "Parque"
+        },
+        {
+          "text": "¿El restaurante es famoso?",
+          "target_noun": "Restaurante"
+        },
+        {
+          "text": "¿El pan es natural?",
+          "target_noun": "pan"
+        },
+        {
+          "text": "¿El plato es de porcelana?",
+          "target_noun": "Plato"
+        },
+        {
+          "text": "¿La botella está completamente vacía?",
+          "target_noun": "Botella"
+        }
+      ],
+      "advance_threshold": {
+        "min_correct": 20,
+        "min_accuracy": 0.8
+      }
+    },
+    {
+      "id": 7,
+      "internal_name": "wants_infinitive",
+      "description": "querer/poder + infinitive with cognates",
+      "sentences": [
+        {
+          "text": "Quiero comer pizza, es deliciosa.",
+          "target_noun": "Pizza"
+        },
+        {
+          "text": "Quiero tomar agua mineral.",
+          "target_noun": "Agua"
+        },
+        {
+          "text": "Quiero comer helado de chocolate.",
+          "target_noun": "Helado"
+        },
+        {
+          "text": "Quiero ver el gato, es un animal curioso.",
+          "target_noun": "Gato"
+        },
+        {
+          "text": "Quiero ver el perro, es un animal especial.",
+          "target_noun": "Perro"
+        },
+        {
+          "text": "Quiero ir al parque, es natural y tranquilo.",
+          "target_noun": "Parque"
+        },
+        {
+          "text": "Quiero ir al restaurante famoso.",
+          "target_noun": "Restaurante"
+        },
+        {
+          "text": "Quiero tomar leche natural.",
+          "target_noun": "leche"
+        },
+        {
+          "text": "Quiero comer chocolate, es mi favorito.",
+          "target_noun": "Chocolate"
+        },
+        {
+          "text": "Quiero comer una manzana, es una fruta natural.",
+          "target_noun": "manzana"
+        },
+        {
+          "text": "Quiero comer pan, es delicioso.",
+          "target_noun": "pan"
+        },
+        {
+          "text": "Quiero comer queso francés.",
+          "target_noun": "Queso"
+        },
+        {
+          "text": "Quiero comer una banana tropical.",
+          "target_noun": "Banana"
+        },
+        {
+          "text": "Quiero ver el libro, es interesante.",
+          "target_noun": "libro"
+        },
+        {
+          "text": "Quiero comer un huevo natural.",
+          "target_noun": "Huevo"
+        },
+        {
+          "text": "Quiero tomar algo en la taza de porcelana.",
+          "target_noun": "Taza"
+        },
+        {
+          "text": "Quiero ir al hospital, es importante.",
+          "target_noun": "Hospital"
+        },
+        {
+          "text": "Quiero ver la guitarra profesional.",
+          "target_noun": "guitarra"
+        },
+        {
+          "text": "Quiero ir en coche, es más práctico.",
+          "target_noun": "coche"
+        },
+        {
+          "text": "No quiero comer pizza, es terrible.",
+          "target_noun": "Pizza"
+        }
+      ],
+      "advance_threshold": {
+        "min_correct": 20,
+        "min_accuracy": 0.8
+      }
+    },
+    {
+      "id": 8,
+      "internal_name": "past",
+      "description": "imperfect tense with cognates",
+      "sentences": [
+        {
+          "text": "Tenía un gato, era un animal especial.",
+          "target_noun": "Gato"
+        },
+        {
+          "text": "Tenía un perro inteligente.",
+          "target_noun": "Perro"
+        },
+        {
+          "text": "Tenía un coche perfecto.",
+          "target_noun": "coche"
+        },
+        {
+          "text": "Tenía una guitarra profesional.",
+          "target_noun": "guitarra"
+        },
+        {
+          "text": "Tenía una llave importante.",
+          "target_noun": "llave"
+        },
+        {
+          "text": "Tenía un libro interesante.",
+          "target_noun": "libro"
+        },
+        {
+          "text": "La casa era elegante.",
+          "target_noun": "casa"
+        },
+        {
+          "text": "El gato era un animal curioso.",
+          "target_noun": "Gato"
+        },
+        {
+          "text": "El perro era un animal increíble.",
+          "target_noun": "Perro"
+        },
+        {
+          "text": "El coche era de color rojo.",
+          "target_noun": "coche"
+        },
+        {
+          "text": "El agua estaba a temperatura natural.",
+          "target_noun": "Agua"
+        },
+        {
+          "text": "La leche estaba a temperatura normal.",
+          "target_noun": "leche"
+        },
+        {
+          "text": "La pizza era deliciosa.",
+          "target_noun": "Pizza"
+        },
+        {
+          "text": "El helado era mi favorito.",
+          "target_noun": "Helado"
+        },
+        {
+          "text": "El chocolate era delicioso.",
+          "target_noun": "Chocolate"
+        },
+        {
+          "text": "La puerta estaba en posición normal.",
+          "target_noun": "puerta"
+        },
+        {
+          "text": "La silla era elegante.",
+          "target_noun": "silla"
+        },
+        {
+          "text": "El parque era enorme y natural.",
+          "target_noun": "Parque"
+        },
+        {
+          "text": "Tenía un teléfono moderno.",
+          "target_noun": "Teléfono"
+        },
+        {
+          "text": "El restaurante era famoso.",
+          "target_noun": "Restaurante"
+        }
+      ],
+      "advance_threshold": {
+        "min_correct": 25,
+        "min_accuracy": 0.8
+      }
+    },
+    {
+      "id": 9,
+      "internal_name": "future",
+      "description": "ir + a + infinitive with cognates",
+      "sentences": [
+        {
+          "text": "Voy a comer pizza, es deliciosa.",
+          "target_noun": "Pizza"
+        },
+        {
+          "text": "Voy a tomar agua mineral.",
+          "target_noun": "Agua"
+        },
+        {
+          "text": "Voy a comer helado de chocolate.",
+          "target_noun": "Helado"
+        },
+        {
+          "text": "Voy a ver el gato, es un animal curioso.",
+          "target_noun": "Gato"
+        },
+        {
+          "text": "Voy a ver el perro, es mi animal favorito.",
+          "target_noun": "Perro"
+        },
+        {
+          "text": "Voy a ir al parque natural.",
+          "target_noun": "Parque"
+        },
+        {
+          "text": "Voy a ir al restaurante famoso.",
+          "target_noun": "Restaurante"
+        },
+        {
+          "text": "Voy a comer chocolate, es delicioso.",
+          "target_noun": "Chocolate"
+        },
+        {
+          "text": "Voy a tomar leche natural.",
+          "target_noun": "leche"
+        },
+        {
+          "text": "Voy a comer una manzana, es una fruta natural.",
+          "target_noun": "manzana"
+        },
+        {
+          "text": "Voy a comer pan delicioso.",
+          "target_noun": "pan"
+        },
+        {
+          "text": "Voy a comer queso, es mi favorito.",
+          "target_noun": "Queso"
+        },
+        {
+          "text": "Voy a comer una banana tropical.",
+          "target_noun": "Banana"
+        },
+        {
+          "text": "Voy a ver el libro, es interesante.",
+          "target_noun": "libro"
+        },
+        {
+          "text": "Voy a ir al hospital, es importante.",
+          "target_noun": "Hospital"
+        },
+        {
+          "text": "Voy a comer un huevo natural.",
+          "target_noun": "Huevo"
+        },
+        {
+          "text": "Voy a ir en coche, es más práctico.",
+          "target_noun": "coche"
+        },
+        {
+          "text": "Voy a ver la guitarra profesional.",
+          "target_noun": "guitarra"
+        },
+        {
+          "text": "Voy a tener un teléfono moderno.",
+          "target_noun": "Teléfono"
+        },
+        {
+          "text": "Voy a tener una llave importante.",
+          "target_noun": "llave"
+        }
+      ],
+      "advance_threshold": {
+        "min_correct": 25,
+        "min_accuracy": 0.8
+      }
+    },
+    {
+      "id": 10,
+      "internal_name": "combined",
+      "description": "mixed grammar structures with cognates",
+      "sentences": [
+        {
+          "text": "No quiero ir al restaurante, es terrible.",
+          "target_noun": "Restaurante"
+        },
+        {
+          "text": "¿Vas a comer pizza? Es deliciosa.",
+          "target_noun": "Pizza"
+        },
+        {
+          "text": "Tenía un gato pero quería un animal diferente.",
+          "target_noun": "Gato"
+        },
+        {
+          "text": "¿Quieres ir al parque natural?",
+          "target_noun": "Parque"
+        },
+        {
+          "text": "El perro era un animal increíble.",
+          "target_noun": "Perro"
+        },
+        {
+          "text": "No voy a comer helado, es horrible.",
+          "target_noun": "Helado"
+        },
+        {
+          "text": "¿Tenías un coche perfecto?",
+          "target_noun": "coche"
+        },
+        {
+          "text": "Quería ir al hospital, era importante.",
+          "target_noun": "Hospital"
+        },
+        {
+          "text": "No tenía una llave, era un problema terrible.",
+          "target_noun": "llave"
+        },
+        {
+          "text": "Voy a tomar agua mineral porque tengo sed.",
+          "target_noun": "Agua"
+        },
+        {
+          "text": "¿Vas a comer chocolate? Es delicioso.",
+          "target_noun": "Chocolate"
+        },
+        {
+          "text": "Tenía un libro pero no era interesante.",
+          "target_noun": "libro"
+        },
+        {
+          "text": "No quería comer la banana tropical.",
+          "target_noun": "Banana"
+        },
+        {
+          "text": "¿Tenías una guitarra profesional?",
+          "target_noun": "guitarra"
+        },
+        {
+          "text": "La leche estaba a temperatura normal pero era deliciosa.",
+          "target_noun": "leche"
+        },
+        {
+          "text": "Voy a ir al parque natural en coche.",
+          "target_noun": "Parque"
+        },
+        {
+          "text": "¿Quieres ver el gato? Es un animal curioso.",
+          "target_noun": "Gato"
+        },
+        {
+          "text": "No tenía un teléfono moderno.",
+          "target_noun": "Teléfono"
+        },
+        {
+          "text": "Quería comer pizza pero no tenía un plato de porcelana.",
+          "target_noun": "Plato"
+        },
+        {
+          "text": "Voy a comer pan con queso, es delicioso.",
+          "target_noun": "Queso"
+        },
+        {
+          "text": "¿Vas a ir al restaurante famoso?",
+          "target_noun": "Restaurante"
+        },
+        {
+          "text": "Tenía una manzana, es una fruta natural.",
+          "target_noun": "manzana"
+        },
+        {
+          "text": "No quería tomar leche, es horrible.",
+          "target_noun": "leche"
+        },
+        {
+          "text": "El perro estaba tranquilo en el parque.",
+          "target_noun": "Perro"
+        },
+        {
+          "text": "La puerta estaba cerrada, era un problema terrible.",
+          "target_noun": "puerta"
+        }
+      ],
+      "advance_threshold": {
+        "min_correct": 30,
+        "min_accuracy": 0.85
+      }
+    }
+  ],
+  "starter_vocabulary": [
+    "Gato",
+    "Perro",
+    "casa",
+    "Agua",
+    "leche",
+    "pan",
+    "libro",
+    "mesa",
+    "silla",
+    "cama",
+    "puerta",
+    "llave",
+    "coche",
+    "Zapato",
+    "reloj",
+    "Teléfono",
+    "guitarra",
+    "manzana",
+    "Queso",
+    "Helado",
+    "Pizza",
+    "Chocolate",
+    "Banana",
+    "Parque",
+    "Restaurante",
+    "Hospital",
+    "Huevo",
+    "Plato",
+    "Taza",
+    "Botella"
+  ]
+}

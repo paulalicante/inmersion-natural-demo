@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#00d4ff">
+    <title>Inmersión Natural</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff; overflow-x: hidden; min-height: 100vh;
+            touch-action: manipulation;
+        }
+        .header {
+            background: rgba(0, 0, 0, 0.4); padding: 8px 15px;
+            display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(10px); gap: 10px;
+        }
+        .header-left { display: flex; align-items: center; gap: 15px; }
+        .logo { font-size: 16px; font-weight: bold; color: #00d4ff; }
+        .header-audio-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none; color: white; font-size: 24px;
+            width: 50px; height: 50px; border-radius: 50%;
+            cursor: pointer; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: transform 0.2s;
+        }
+        .header-audio-btn:active { transform: scale(0.95); }
+        .header-center { display: flex; gap: 8px; align-items: center; }
+        .progress-display { font-size: 14px; color: #4caf50; font-weight: 600; }
+        .header-right { display: flex; align-items: center; gap: 8px; }
+        .pause-btn {
+            font-size: 20px; background: rgba(255,255,255,0.1);
+            border: none; color: white; padding: 6px 10px;
+            border-radius: 8px; cursor: pointer;
+        }
+        .pause-btn.paused { background: rgba(255,255,255,0.3); }
+        .game-container { height: calc(100vh - 70px); display: flex; flex-direction: column; position: relative; }
+        .card-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 10px; padding: 10px; flex: 1;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px; overflow: hidden; cursor: pointer;
+            transition: all 0.3s; position: relative;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .card img {
+            width: 100%; height: 100%; object-fit: cover;
+            border-radius: 10px;
+        }
+        .card-label {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            background: rgba(0, 0, 0, 0.7); color: white;
+            padding: 4px 8px; text-align: center; font-size: 14px;
+            font-weight: 600; backdrop-filter: blur(5px);
+        }
+        .card.correct { animation: flash-green 0.6s; border-color: #4caf50; }
+        .card.wrong { animation: shake 0.3s; border-color: #ff4444; }
+        .card.solved { opacity: 0.3; pointer-events: none; }
+        .hint-display {
+            text-align: center; font-size: 20px; font-weight: bold;
+            color: #fff; padding: 8px 20px; min-height: 36px;
+            transition: all 0.3s; background: rgba(0, 0, 0, 0.6);
+        }
+        .hint-display.empty { opacity: 0; min-height: 0; padding: 0; }
+        .game-container.hint-active .card-grid { flex: 0.85; }
+        .feedback {
+            position: fixed; bottom: 100px; left: 50%;
+            transform: translateX(-50%); background: rgba(0, 0, 0, 0.9);
+            padding: 40px 60px; border-radius: 20px; font-size: 48px;
+            z-index: 1000; display: none;
+        }
+        .feedback.show { display: block; animation: pop 0.3s; }
+        @keyframes flash-green {
+            0%, 100% { border-color: rgba(255, 255, 255, 0.1); }
+            50% { border-color: #4caf50; box-shadow: 0 0 30px #4caf50; }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        @keyframes pop {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+        .loading { text-align: center; padding: 60px 20px; font-size: 24px; color: rgba(255,255,255,0.5); }
+        .hidden { display: none !important; }
+        .sentence-image-overlay {
+            position: fixed; top: 50%; left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            width: 70vmin; max-width: 500px; z-index: 100;
+            opacity: 0; pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer; display: flex; flex-direction: column; align-items: center;
+        }
+        .sentence-image-overlay.visible {
+            opacity: 1; transform: translate(-50%, -50%) scale(1);
+            pointer-events: auto;
+        }
+        .sentence-image-overlay img {
+            width: 100%; height: 70vmin; max-height: 400px;
+            object-fit: cover; border-radius: 20px;
+            border: 4px solid rgba(255,255,255,0.3);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+        }
+        .sentence-image-overlay .sentence-text {
+            margin-top: 15px; padding: 15px 25px;
+            background: rgba(0,0,0,0.9); border: 2px solid #00d4ff;
+            border-radius: 15px; color: #00d4ff; font-size: 22px;
+            font-weight: 600; text-align: center; max-width: 90vw;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .sentence-image-overlay::after {
+            content: 'Toca para continuar'; position: absolute;
+            bottom: -50px; left: 50%; transform: translateX(-50%);
+            background: rgba(0,0,0,0.8); color: white;
+            padding: 10px 20px; border-radius: 20px; font-size: 14px;
+            white-space: nowrap; opacity: 0; transition: opacity 0.3s;
+        }
+        .sentence-image-overlay.visible::after { opacity: 1; }
+        .game-container.overlay-active::before {
+            content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5); z-index: 99; animation: fadeIn 0.3s;
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <div class="logo">🦜 Inmersión</div>
+            <button class="header-audio-btn" id="play-audio">🔊</button>
+        </div>
+        <div class="header-center">
+            <span class="progress-display">🌱 <span id="words-count">0</span> palabras</span>
+        </div>
+        <div class="header-right">
+            <button class="pause-btn" id="pause-btn">⏸️</button>
+        </div>
+    </div>
+
+    <div id="game-mode" class="game-container">
+        <div class="card-grid" id="card-grid"></div>
+        <div class="hint-display empty" id="hint-display"></div>
+        <div class="sentence-image-overlay" id="sentence-overlay">
+            <img src="" alt="Sentence context">
+            <div class="sentence-text" id="sentence-text"></div>
+        </div>
+        <div class="loading" id="game-loading">Cargando...</div>
+        <div id="ready-overlay" class="hidden" style="
+            position:fixed;top:0;left:0;right:0;bottom:0;
+            background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;z-index:500;">
+            <button id="ready-btn" style="
+                font-size:28px;font-weight:bold;padding:20px 60px;
+                background:linear-gradient(135deg,#00d4ff,#0099cc);
+                color:white;border:none;border-radius:16px;cursor:pointer;
+                box-shadow:0 8px 30px rgba(0,212,255,0.4);">¡Listo!</button>
+        </div>
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+    <audio id="audio-player" preload="auto"></audio>
+
+    <script>
+    // ========== GAME DATA (loaded from game_data.json at build time) ==========
+    let GAME_DATA = null;
+
+    // ========== STATE ==========
+    let immersionStage = 1;
+    let immersionSentence = null;
+    let wordsMastered = 0;
+    let gameDeck = [];
+    let targetSpanish = '';
+    let solvedCards = new Set();
+    let failedCards = new Set();
+    let wrongAttempts = 0;
+    let streak = 0;
+    let paused = false;
+    let inactivityTimer1 = null;
+    let inactivityTimer2 = null;
+    let inRecapMode = false;
+    let recapIndex = 0;
+    let isFirstRound = true;
+    let ttsTimeout = null;
+
+    // Elements
+    const cardGrid = document.getElementById('card-grid');
+    const hintDisplay = document.getElementById('hint-display');
+    const gameLoading = document.getElementById('game-loading');
+    const sentenceOverlay = document.getElementById('sentence-overlay');
+    const feedback = document.getElementById('feedback');
+    const audioPlayer = document.getElementById('audio-player');
+
+    // ========== PROGRESSION (localStorage) ==========
+    function loadProgress() {
+        try {
+            const stored = localStorage.getItem('inmersion_progress');
+            if (stored) return JSON.parse(stored);
+        } catch(e) {}
+        return {
+            grammar_stage: 1,
+            stage_stats: { "1": { correct: 0, incorrect: 0 } },
+            words_mastered: [],
+            card_stats: {}
+        };
+    }
+
+    function saveProgress(progress) {
+        localStorage.setItem('inmersion_progress', JSON.stringify(progress));
+    }
+
+    // ========== ASSET PATH ==========
+    function assetUrl(filename) {
+        if (!filename) return '';
+        return 'static/assets/' + filename;
+    }
+
+    // ========== SENTENCE BLENDING (Stage 2+) ==========
+    function pickStageSentence(stage) {
+        if (!GAME_DATA || !GAME_DATA.stages) return null;
+        const stages = GAME_DATA.stages;
+        let pool = [];
+
+        // Current stage (60%)
+        const current = stages.find(s => s.id === stage);
+        if (current) {
+            current.sentences.forEach(s => pool.push({ sent: s, weight: 60 }));
+        }
+
+        // Previous stage (25%)
+        if (stage > 2) {
+            const prev = stages.find(s => s.id === stage - 1);
+            if (prev) prev.sentences.forEach(s => pool.push({ sent: s, weight: 25 }));
+        }
+
+        // Earlier stages (15%)
+        for (let i = 2; i < Math.max(2, stage - 1); i++) {
+            const earlier = stages.find(s => s.id === i);
+            if (earlier) earlier.sentences.forEach(s => pool.push({ sent: s, weight: 15 }));
+        }
+
+        if (pool.length === 0) return null;
+
+        // Weighted random selection
+        const totalWeight = pool.reduce((sum, p) => sum + p.weight, 0);
+        let r = Math.random() * totalWeight;
+        for (const p of pool) {
+            r -= p.weight;
+            if (r <= 0) return p.sent;
+        }
+        return pool[pool.length - 1].sent;
+    }
+
+    // ========== ADVANCEMENT CHECK ==========
+    function shouldAdvance(progress) {
+        const stage = progress.grammar_stage || 1;
+        if (!GAME_DATA || !GAME_DATA.stages) return false;
+        const stageDef = GAME_DATA.stages.find(s => s.id === stage);
+        if (!stageDef) return false;
+
+        const threshold = stageDef.advance_threshold || {};
+        const minCorrect = threshold.min_correct || 20;
+        const minAccuracy = threshold.min_accuracy || 0.75;
+
+        const stats = (progress.stage_stats || {})[String(stage)] || {};
+        const correct = stats.correct || 0;
+        const incorrect = stats.incorrect || 0;
+        const total = correct + incorrect;
+        if (total === 0) return false;
+
+        return correct >= minCorrect && (correct / total) >= minAccuracy;
+    }
+
+    // ========== DEAL A ROUND ==========
+    function dealRound() {
+        const progress = loadProgress();
+        immersionStage = progress.grammar_stage || 1;
+        wordsMastered = (progress.words_mastered || []).length;
+        document.getElementById('words-count').textContent = wordsMastered;
+
+        const cards = GAME_DATA.cards.filter(c => c.image); // Only cards with images
+        if (cards.length < 4) {
+            console.error('Not enough cards');
+            return null;
+        }
+
+        if (immersionStage === 1) {
+            // Stage 1: pure vocabulary
+            const shuffled = [...cards].sort(() => Math.random() - 0.5);
+            const target = shuffled[0];
+            const distractors = shuffled.slice(1, 4);
+            const deck = [target, ...distractors].sort(() => Math.random() - 0.5);
+            return {
+                deck: deck.map(c => ({
+                    spanish_full: c.spanish_full,
+                    article: c.article,
+                    image: assetUrl(c.image),
+                    audio: assetUrl(c.audio),
+                    sentences: c.sentences || []
+                })),
+                target_spanish: target.spanish_full,
+                stage: 1,
+                sentence: null
+            };
+        } else {
+            // Stage 2+: sentence comprehension
+            const sentence = pickStageSentence(immersionStage);
+            if (!sentence) {
+                // Fallback to Stage 1 behavior
+                return dealRound_stage1Fallback(cards);
+            }
+
+            const targetNoun = sentence.target_noun;
+            const targetCard = cards.find(c => c.spanish_full.toLowerCase() === targetNoun.toLowerCase());
+            if (!targetCard) return dealRound_stage1Fallback(cards);
+
+            const distractorPool = cards.filter(c => c.spanish_full.toLowerCase() !== targetNoun.toLowerCase());
+            const distractors = distractorPool.sort(() => Math.random() - 0.5).slice(0, 3);
+            const deck = [targetCard, ...distractors].sort(() => Math.random() - 0.5);
+
+            return {
+                deck: deck.map(c => ({
+                    spanish_full: c.spanish_full,
+                    article: c.article,
+                    image: assetUrl(c.image),
+                    audio: assetUrl(c.audio),
+                    sentences: c.sentences || []
+                })),
+                target_spanish: targetCard.spanish_full,
+                stage: immersionStage,
+                sentence: sentence.text
+            };
+        }
+    }
+
+    function dealRound_stage1Fallback(cards) {
+        const shuffled = [...cards].sort(() => Math.random() - 0.5);
+        const target = shuffled[0];
+        const distractors = shuffled.slice(1, 4);
+        const deck = [target, ...distractors].sort(() => Math.random() - 0.5);
+        return {
+            deck: deck.map(c => ({
+                spanish_full: c.spanish_full,
+                article: c.article,
+                image: assetUrl(c.image),
+                audio: assetUrl(c.audio),
+                sentences: c.sentences || []
+            })),
+            target_spanish: target.spanish_full,
+            stage: immersionStage,
+            sentence: null
+        };
+    }
+
+    // ========== GAME LOOP ==========
+    async function loadGameRound() {
+        cardGrid.innerHTML = '';
+        gameLoading.classList.remove('hidden');
+        solvedCards.clear();
+        failedCards.clear();
+        wrongAttempts = 0;
+        inRecapMode = false;
+        recapIndex = 0;
+        immersionSentence = null;
+        clearInactivityTimers();
+        clearHint();
+
+        const data = dealRound();
+        if (!data) {
+            gameLoading.textContent = 'Error: No hay suficientes cartas';
+            return;
+        }
+
+        gameDeck = data.deck;
+        targetSpanish = data.target_spanish;
+        immersionStage = data.stage;
+        immersionSentence = data.sentence;
+
+        renderGameCards();
+
+        // Wait for images to load
+        const cardImages = cardGrid.querySelectorAll('img');
+        const imagePromises = Array.from(cardImages).map(img => {
+            if (img.complete) return Promise.resolve();
+            return new Promise(resolve => {
+                img.onload = resolve;
+                img.onerror = resolve;
+            });
+        });
+        await Promise.all(imagePromises);
+
+        gameLoading.classList.add('hidden');
+
+        if (isFirstRound) {
+            await showReadyButton();
+            isFirstRound = false;
+        }
+
+        beginRound();
+    }
+
+    function showReadyButton() {
+        return new Promise(resolve => {
+            const overlay = document.getElementById('ready-overlay');
+            const btn = document.getElementById('ready-btn');
+            overlay.classList.remove('hidden');
+            overlay.style.display = 'flex';
+            btn.onclick = () => {
+                overlay.classList.add('hidden');
+                overlay.style.display = 'none';
+                resolve();
+            };
+        });
+    }
+
+    function beginRound() {
+        cancelTTS();
+        clearHint();
+        clearInactivityTimers();
+
+        if (immersionSentence) {
+            speakSpanish(immersionSentence);
+        } else {
+            const targetCard = gameDeck.find(c => c.spanish_full === targetSpanish);
+            if (targetCard && targetCard.audio) {
+                playAudio(targetCard.audio);
+            }
+        }
+
+        setTimeout(() => startInactivityTimers(), 500);
+    }
+
+    function renderGameCards() {
+        cardGrid.innerHTML = '';
+        gameDeck.forEach((card, idx) => {
+            const cardEl = document.createElement('div');
+            cardEl.className = 'card';
+            cardEl.dataset.index = idx;
+
+            if (card.image) {
+                const img = document.createElement('img');
+                img.src = card.image;
+                cardEl.appendChild(img);
+            }
+
+            const label = document.createElement('div');
+            label.className = 'card-label';
+            label.textContent = card.spanish_full;
+            cardEl.appendChild(label);
+
+            cardEl.addEventListener('click', () => handleCardClick(card, cardEl));
+            cardGrid.appendChild(cardEl);
+        });
+    }
+
+    // ========== INACTIVITY TIMERS ==========
+    function clearInactivityTimers() {
+        if (inactivityTimer1) clearTimeout(inactivityTimer1);
+        if (inactivityTimer2) clearTimeout(inactivityTimer2);
+        inactivityTimer1 = null;
+        inactivityTimer2 = null;
+    }
+
+    function startInactivityTimers() {
+        clearInactivityTimers();
+        if (paused) return;
+        const targetCard = gameDeck.find(c => c.spanish_full === targetSpanish);
+        if (!targetCard) return;
+
+        if (immersionSentence) {
+            // Stage 2+: show sentence text after 2s
+            inactivityTimer1 = setTimeout(() => {
+                hintDisplay.textContent = immersionSentence;
+                hintDisplay.classList.remove('empty');
+                document.getElementById('game-mode').classList.add('hint-active');
+            }, 2000);
+            inactivityTimer2 = setTimeout(() => { speakSpanish(immersionSentence); }, 5000);
+        } else {
+            // Stage 1: show word after 3s, sentence after 6s
+            inactivityTimer1 = setTimeout(() => {
+                const article = targetCard.article || '';
+                const fullWord = article ? `${article} ${targetCard.spanish_full}` : targetCard.spanish_full;
+                showHint(fullWord, targetCard);
+            }, 3000);
+            inactivityTimer2 = setTimeout(() => {
+                const sentences = targetCard.sentences || [];
+                if (sentences.length > 0) {
+                    showHint(sentences[0], targetCard, true);
+                }
+            }, 6000);
+        }
+    }
+
+    // ========== HINTS ==========
+    function showHint(sentenceData, targetCard, isSentence = false, speak = true) {
+        let text = '';
+        let sentenceImage = null;
+        if (typeof sentenceData === 'string') {
+            text = sentenceData;
+        } else if (typeof sentenceData === 'object' && sentenceData.text) {
+            text = sentenceData.text;
+            sentenceImage = sentenceData.image ? assetUrl(sentenceData.image) : null;
+        }
+
+        hintDisplay.textContent = text;
+        hintDisplay.classList.remove('empty');
+        document.getElementById('game-mode').classList.add('hint-active');
+
+        if (isSentence || (text.includes(' ') && text.length > 15)) {
+            let imageUrl = sentenceImage;
+            if (!imageUrl && targetCard && targetCard.image) {
+                imageUrl = targetCard.image;
+            }
+            if (imageUrl) {
+                const overlayImg = sentenceOverlay.querySelector('img');
+                const sentenceTextEl = document.getElementById('sentence-text');
+                overlayImg.onload = () => {
+                    if (sentenceTextEl) sentenceTextEl.textContent = text;
+                    sentenceOverlay.classList.add('visible');
+                    document.getElementById('game-mode').classList.add('overlay-active');
+                    hintDisplay.classList.add('empty');
+                    document.getElementById('game-mode').classList.remove('hint-active');
+                };
+                overlayImg.src = imageUrl;
+                if (overlayImg.complete && overlayImg.naturalWidth > 0) {
+                    if (sentenceTextEl) sentenceTextEl.textContent = text;
+                    sentenceOverlay.classList.add('visible');
+                    document.getElementById('game-mode').classList.add('overlay-active');
+                    hintDisplay.classList.add('empty');
+                    document.getElementById('game-mode').classList.remove('hint-active');
+                }
+            }
+            if (speak && text) speakSpanish(text);
+        }
+    }
+
+    function clearHint() {
+        cancelTTS();
+        hintDisplay.textContent = '';
+        hintDisplay.classList.add('empty');
+        document.getElementById('game-mode').classList.remove('hint-active');
+        sentenceOverlay.classList.remove('visible');
+        document.getElementById('game-mode').classList.remove('overlay-active');
+        const overlayImg = sentenceOverlay.querySelector('img');
+        overlayImg.onload = null;
+        overlayImg.src = '';
+        const sentenceTextEl = document.getElementById('sentence-text');
+        if (sentenceTextEl) sentenceTextEl.textContent = '';
+    }
+
+    // ========== CARD CLICK ==========
+    async function handleCardClick(card, cardEl) {
+        if (paused || inRecapMode) return;
+        if (solvedCards.has(card.spanish_full)) return;
+
+        clearInactivityTimers();
+        cancelTTS();
+        clearHint();
+
+        const isCorrect = card.spanish_full === targetSpanish;
+        const targetCard = gameDeck.find(c => c.spanish_full === targetSpanish);
+
+        if (isCorrect) {
+            cardEl.classList.add('correct');
+            solvedCards.add(card.spanish_full);
+            wrongAttempts = 0;
+            streak++;
+
+            if (card.audio) playAudio(card.audio);
+            showFeedback(`✅ ¡Correcto! Racha: ${streak}`, 1500);
+
+            // Update local stats
+            const progress = loadProgress();
+            const stageKey = String(immersionStage);
+            if (!progress.stage_stats[stageKey]) {
+                progress.stage_stats[stageKey] = { correct: 0, incorrect: 0 };
+            }
+            progress.stage_stats[stageKey].correct++;
+
+            // Track card stats
+            if (!progress.card_stats[card.spanish_full]) {
+                progress.card_stats[card.spanish_full] = { correct: 0, incorrect: 0 };
+            }
+            progress.card_stats[card.spanish_full].correct++;
+
+            // Track words mastered (5+ correct)
+            const cardCorrect = progress.card_stats[card.spanish_full].correct;
+            if (cardCorrect >= 5 && !progress.words_mastered.includes(card.spanish_full)) {
+                progress.words_mastered.push(card.spanish_full);
+            }
+
+            // Check advancement
+            if (shouldAdvance(progress)) {
+                progress.grammar_stage = (progress.grammar_stage || 1) + 1;
+                const newKey = String(progress.grammar_stage);
+                if (!progress.stage_stats[newKey]) {
+                    progress.stage_stats[newKey] = { correct: 0, incorrect: 0 };
+                }
+                immersionStage = progress.grammar_stage;
+            }
+
+            saveProgress(progress);
+            wordsMastered = progress.words_mastered.length;
+            document.getElementById('words-count').textContent = wordsMastered;
+
+            setTimeout(() => {
+                if (solvedCards.size === gameDeck.length) {
+                    showFeedback(`🎉 ¡Ronda completa! ${gameDeck.length - failedCards.size}/${gameDeck.length}`, 3000);
+                    setTimeout(startRecap, 3000);
+                } else {
+                    pickNextTarget();
+                }
+            }, 1000);
+
+        } else {
+            cardEl.classList.add('wrong');
+            setTimeout(() => cardEl.classList.remove('wrong'), 500);
+            wrongAttempts++;
+
+            if (wrongAttempts < 3) {
+                showFeedback('❌'.repeat(wrongAttempts), 500);
+                const sentences = targetCard.sentences || [];
+                if (sentences.length > 0) {
+                    showHint(sentences[0], targetCard, true, false);
+                }
+                setTimeout(() => startInactivityTimers(), 3500);
+            } else {
+                // Reveal answer
+                streak = 0;
+                wrongAttempts = 0;
+                solvedCards.add(targetCard.spanish_full);
+                failedCards.add(targetCard.spanish_full);
+
+                const article = targetCard.article || '';
+                const fullWord = article ? `${article} ${targetCard.spanish_full}` : targetCard.spanish_full;
+                showFeedback(`❌ ${fullWord}`, 3000);
+
+                // Update stats as incorrect
+                const progress = loadProgress();
+                const stageKey = String(immersionStage);
+                if (!progress.stage_stats[stageKey]) {
+                    progress.stage_stats[stageKey] = { correct: 0, incorrect: 0 };
+                }
+                progress.stage_stats[stageKey].incorrect++;
+                if (!progress.card_stats[targetCard.spanish_full]) {
+                    progress.card_stats[targetCard.spanish_full] = { correct: 0, incorrect: 0 };
+                }
+                progress.card_stats[targetCard.spanish_full].incorrect++;
+                saveProgress(progress);
+
+                const targetIndex = gameDeck.findIndex(c => c.spanish_full === targetSpanish);
+                const targetCardEl = cardGrid.children[targetIndex];
+                if (targetCardEl) {
+                    targetCardEl.classList.add('solved');
+                    targetCardEl.style.opacity = '0.3';
+                }
+
+                setTimeout(() => {
+                    if (solvedCards.size === gameDeck.length) {
+                        showFeedback(`${gameDeck.length - failedCards.size}/${gameDeck.length}`, 3000);
+                        setTimeout(startRecap, 3000);
+                    } else {
+                        pickNextTarget();
+                    }
+                }, 3000);
+            }
+        }
+    }
+
+    function pickNextTarget() {
+        const unsolved = gameDeck.filter(c => !solvedCards.has(c.spanish_full));
+        if (unsolved.length === 0) return;
+        const next = unsolved[Math.floor(Math.random() * unsolved.length)];
+        targetSpanish = next.spanish_full;
+        wrongAttempts = 0;
+        clearHint();
+
+        if (!paused) {
+            if (immersionSentence) {
+                setTimeout(() => speakSpanish(immersionSentence), 500);
+            } else if (next.audio) {
+                setTimeout(() => playAudio(next.audio), 500);
+            }
+        }
+        setTimeout(() => startInactivityTimers(), 1000);
+    }
+
+    // ========== RECAP ==========
+    function startRecap() {
+        inRecapMode = true;
+        recapIndex = 0;
+        clearInactivityTimers();
+        clearHint();
+        showRecapCard();
+    }
+
+    function showRecapCard() {
+        if (recapIndex >= gameDeck.length) {
+            inRecapMode = false;
+            setTimeout(loadGameRound, 1500);
+            return;
+        }
+
+        const card = gameDeck[recapIndex];
+        const article = card.article || '';
+        const fullWord = article ? `${article} ${card.spanish_full}` : card.spanish_full;
+
+        let sentenceText = null;
+        let sentenceImage = null;
+        let showSentenceInRecap = false;
+
+        if (card.sentences && card.sentences.length > 0) {
+            const sentenceObj = card.sentences[0];
+            sentenceText = typeof sentenceObj === 'string' ? sentenceObj : sentenceObj.text;
+            sentenceImage = (sentenceObj && sentenceObj.image) ? assetUrl(sentenceObj.image) : null;
+            showSentenceInRecap = true;
+        }
+
+        const allCards = cardGrid.querySelectorAll('.card');
+        allCards.forEach((el, idx) => {
+            if (idx === recapIndex) {
+                el.style.display = 'block';
+                el.style.transform = 'scale(1.15)';
+                el.style.opacity = '1';
+                el.style.zIndex = '10';
+                el.style.boxShadow = '0 20px 60px rgba(0,212,255,0.3)';
+                el.classList.remove('solved');
+
+                if (showSentenceInRecap && sentenceImage) {
+                    const img = el.querySelector('img');
+                    if (img) { img.dataset.originalSrc = img.src; img.src = sentenceImage; }
+                }
+
+                const existingOverlay = el.querySelector('.recap-text-overlay');
+                if (existingOverlay) existingOverlay.remove();
+
+                const textOverlay = document.createElement('div');
+                textOverlay.className = 'recap-text-overlay';
+
+                if (showSentenceInRecap && sentenceText) {
+                    const wordPattern = new RegExp('(' + card.spanish_full + ')', 'gi');
+                    let highlighted = sentenceText.replace(wordPattern,
+                        '<span style="color:#00d4ff;text-decoration:underline;">$1</span>');
+                    textOverlay.innerHTML = highlighted;
+                } else {
+                    textOverlay.textContent = fullWord;
+                }
+
+                const isSentence = showSentenceInRecap;
+                const fontSize = isSentence ? '14px' : '20px';
+                textOverlay.style.cssText = `
+                    position:absolute;bottom:10px;left:50%;transform:translateX(-50%);
+                    background:rgba(0,0,0,0.85);color:white;padding:8px 12px;
+                    border-radius:8px;font-size:${fontSize};font-weight:bold;z-index:100;
+                    white-space:${isSentence ? 'normal' : 'nowrap'};
+                    max-width:${isSentence ? '90%' : 'none'};text-align:center;cursor:pointer;
+                `;
+
+                textOverlay.onclick = (e) => {
+                    e.stopPropagation();
+                    if (sentenceText) speakSpanish(sentenceText);
+                    else if (card.audio) playAudio(card.audio);
+                };
+
+                el.appendChild(textOverlay);
+            } else {
+                el.style.opacity = '0';
+                el.style.transform = 'scale(0.8)';
+            }
+        });
+
+        if (showSentenceInRecap && sentenceText) {
+            speakSpanish(sentenceText);
+        } else if (card.audio) {
+            playAudio(card.audio);
+        }
+
+        const delay = showSentenceInRecap ? 4500 : 2500;
+        recapIndex++;
+        setTimeout(showRecapCard, delay);
+    }
+
+    // ========== UTILS ==========
+    function playAudio(url) {
+        audioPlayer.src = url;
+        audioPlayer.play().catch(e => console.error('Audio play error:', e));
+    }
+
+    function showFeedback(message, duration = 1500) {
+        feedback.textContent = message;
+        feedback.classList.add('show');
+        setTimeout(() => feedback.classList.remove('show'), duration);
+    }
+
+    // ========== TTS ==========
+    let spanishVoices = [];
+    let selectedVoice = null;
+    let speechRate = 0.6;
+
+    function initSpanishVoices() {
+        const voices = speechSynthesis.getVoices();
+        spanishVoices = voices.filter(v => v.lang.startsWith('es'));
+        spanishVoices.sort((a, b) => {
+            const aN = a.name.toLowerCase().includes('natural');
+            const bN = b.name.toLowerCase().includes('natural');
+            if (aN && !bN) return -1;
+            if (!aN && bN) return 1;
+            return a.name.localeCompare(b.name);
+        });
+        if (spanishVoices.length > 0) selectedVoice = spanishVoices[0];
+        console.log('TTS voices:', spanishVoices.length, 'selected:', selectedVoice?.name);
+    }
+
+    function speakSpanish(text, onEnd = null) {
+        if (ttsTimeout) { clearTimeout(ttsTimeout); ttsTimeout = null; }
+        speechSynthesis.cancel();
+        ttsTimeout = setTimeout(() => {
+            ttsTimeout = null;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'es-ES';
+            if (selectedVoice) utterance.voice = selectedVoice;
+            utterance.rate = speechRate;
+            if (onEnd) utterance.onend = onEnd;
+            speechSynthesis.speak(utterance);
+        }, 100);
+    }
+
+    function cancelTTS() {
+        if (ttsTimeout) { clearTimeout(ttsTimeout); ttsTimeout = null; }
+        speechSynthesis.cancel();
+    }
+
+    speechSynthesis.onvoiceschanged = initSpanishVoices;
+    initSpanishVoices();
+
+    // ========== UI EVENT HANDLERS ==========
+    document.getElementById('play-audio').addEventListener('click', () => {
+        if (immersionSentence) {
+            speakSpanish(immersionSentence);
+        } else {
+            const targetCard = gameDeck.find(c => c.spanish_full === targetSpanish);
+            if (targetCard && targetCard.audio) playAudio(targetCard.audio);
+        }
+        clearInactivityTimers();
+        setTimeout(() => startInactivityTimers(), 500);
+    });
+
+    document.getElementById('pause-btn').addEventListener('click', () => {
+        paused = !paused;
+        const btn = document.getElementById('pause-btn');
+        if (paused) {
+            btn.textContent = '▶️'; btn.classList.add('paused');
+            clearInactivityTimers();
+        } else {
+            btn.textContent = '⏸️'; btn.classList.remove('paused');
+            startInactivityTimers();
+        }
+    });
+
+    hintDisplay.addEventListener('click', () => {
+        clearHint();
+        speechSynthesis.cancel();
+        const targetCard = gameDeck.find(c => c.spanish_full === targetSpanish);
+        if (targetCard && targetCard.audio && !paused) {
+            setTimeout(() => playAudio(targetCard.audio), 300);
+        }
+        setTimeout(() => startInactivityTimers(), 500);
+    });
+
+    sentenceOverlay.addEventListener('click', () => {
+        sentenceOverlay.classList.remove('visible');
+        document.getElementById('game-mode').classList.remove('overlay-active');
+        document.getElementById('game-mode').classList.remove('hint-active');
+        speechSynthesis.cancel();
+        hintDisplay.textContent = '';
+        hintDisplay.classList.add('empty');
+        const targetCard = gameDeck.find(c => c.spanish_full === targetSpanish);
+        if (targetCard && targetCard.audio && !paused) {
+            setTimeout(() => playAudio(targetCard.audio), 300);
+        }
+    });
+
+    // ========== INIT ==========
+    async function init() {
+        try {
+            const resp = await fetch('static/game_data.json');
+            GAME_DATA = await resp.json();
+            console.log(`Loaded ${GAME_DATA.cards.length} cards, ${GAME_DATA.stages.length} stages`);
+            loadGameRound();
+        } catch(e) {
+            console.error('Failed to load game data:', e);
+            gameLoading.textContent = 'Error loading game data';
+        }
+    }
+
+    init();
+    </script>
+</body>
+</html>
