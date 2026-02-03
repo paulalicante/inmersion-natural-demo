@@ -72,7 +72,7 @@
       "spanish_full": "leche",
       "article": "La",
       "english": "",
-      "image": "milk.png",
+      "image": "milk.jpg",
       "audio": "la_leche_serena.mp3",
       "sentences": [
         {
@@ -263,7 +263,7 @@
       "spanish_full": "Teléfono",
       "article": "El",
       "english": "",
-      "image": "thetelephone.png",
+      "image": "thetelephone.jpg",
       "audio": "el_telefono_serena.mp3",
       "sentences": [
         {
@@ -295,35 +295,35 @@
     },
     {
       "spanish_full": "manzana",
-      "article": "",
+      "article": "La",
       "english": "",
       "image": "theapple.jpg",
       "audio": "la_manzana_serena.mp3",
       "sentences": [
         {
-          "text": "Me gusta la manzana.",
-          "image": "manzana_sentence_0_1769265903.jpg"
+          "text": "La manzana es roja y dulce.",
+          "image": ""
         },
         {
           "text": "La manzana es una fruta natural y deliciosa.",
-          "image": "manzana_cognate_sentence_1769753392.jpg"
+          "image": "manzana_cognate_sentence_1769752718.jpg"
         }
       ]
     },
     {
-      "spanish_full": "queso",
-      "article": "",
+      "spanish_full": "Queso",
+      "article": "El",
       "english": "",
       "image": "the_cheese.jpg",
       "audio": "el_queso_serena.mp3",
       "sentences": [
         {
-          "text": "El queso es un producto natural.",
-          "image": ""
+          "text": "Me gusta el queso amarillo.",
+          "image": "queso_sentence_0_1769252647.jpg"
         },
         {
-          "text": "Me encanta el queso.",
-          "image": "queso_sentence_0_1769265974.jpg"
+          "text": "\"El queso es parte de la pasta.\"",
+          "image": ""
         }
       ]
     },
@@ -374,7 +374,7 @@
       "spanish_full": "Banana",
       "article": "La",
       "english": "",
-      "image": "thebanana.png",
+      "image": "thebanana.jpg",
       "audio": "la_banana_serena.mp3",
       "sentences": [
         {
@@ -438,7 +438,7 @@
       "spanish_full": "Huevo",
       "article": "El",
       "english": "",
-      "image": "egg.png",
+      "image": "egg.jpg",
       "audio": "el_huevo_serena.mp3",
       "sentences": [
         {
