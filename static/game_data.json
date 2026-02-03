@@ -8,8 +8,46 @@
       "audio": "el_gato_serena.mp3",
       "sentences": [
         {
+          "text": "El gato juega con la bola.",
+          "image": "gato_sentence_0_1769240211.jpg"
+        },
+        {
           "text": "El gato es un animal curioso.",
-          "image": ""
+          "image": "gato_cognate_sentence_1769591230.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Perro",
+      "article": "El",
+      "english": "",
+      "image": "dog.jpg",
+      "audio": "el_perro_serena.mp3",
+      "sentences": [
+        {
+          "text": "El perro juega en el jardín.",
+          "image": "perro_sentence_0_1769249490.jpg"
+        },
+        {
+          "text": "El perro es un animal excelente.",
+          "image": "perro_cognate_sentence_1769591599.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "casa",
+      "article": "La",
+      "english": "",
+      "image": "thehouse.jpg",
+      "audio": "la_casa_serena.mp3",
+      "sentences": [
+        {
+          "text": "La casa es muy grande.",
+          "image": "casa_sentence_0_1769251708.jpg"
+        },
+        {
+          "text": "La casa de mi familia es especial.",
+          "image": "casa_cognate_sentence_1769752152.jpg"
         }
       ]
     },
@@ -23,113 +61,44 @@
         {
           "text": "El agua mineral es natural y fresca.",
           "image": ""
-        }
-      ]
-    },
-    {
-      "spanish_full": "Hospital",
-      "article": "El",
-      "english": "",
-      "image": "thehospital.jpg",
-      "audio": "el_hospital_serena.mp3",
-      "sentences": []
-    },
-    {
-      "spanish_full": "Chocolate",
-      "article": "El",
-      "english": "",
-      "image": "chocolate.jpg",
-      "audio": "el_chocolate_serena.mp3",
-      "sentences": [
+        },
         {
-          "text": "El chocolate es mi dulce favorito.",
-          "image": "chocolate_sentence_0_1769244579.jpg"
+          "text": "El agua es muy fresca.",
+          "image": "agua_sentence_0_1769244463.jpg"
         }
       ]
     },
     {
-      "spanish_full": "Teléfono",
-      "article": "El",
-      "english": "",
-      "image": "thetelephone.png",
-      "audio": "el_telefono_serena.mp3",
-      "sentences": [
-        {
-          "text": "El teléfono es un objeto importante.",
-          "image": ""
-        }
-      ]
-    },
-    {
-      "spanish_full": "Pizza",
+      "spanish_full": "leche",
       "article": "La",
       "english": "",
-      "image": "thepizza.jpg",
-      "audio": "la_pizza_serena.mp3",
+      "image": "milk.png",
+      "audio": "la_leche_serena.mp3",
       "sentences": [
         {
-          "text": "La pizza tiene queso y tomates.",
-          "image": "pizza_sentence_0_1769244981.jpg"
+          "text": "La leche es blanca y fría.",
+          "image": "leche_sentence_0_1769246275.jpg"
+        },
+        {
+          "text": "La leche es un producto natural.",
+          "image": "leche_cognate_sentence_1769752658.jpg"
         }
       ]
     },
     {
-      "spanish_full": "Banana",
-      "article": "La",
-      "english": "",
-      "image": "thebanana.png",
-      "audio": "la_banana_serena.mp3",
-      "sentences": [
-        {
-          "text": "La banana es una fruta tropical.",
-          "image": ""
-        }
-      ]
-    },
-    {
-      "spanish_full": "Huevo",
+      "spanish_full": "pan",
       "article": "El",
       "english": "",
-      "image": "egg.png",
-      "audio": "el_huevo_serena.mp3",
+      "image": "bread.jpg",
+      "audio": "el_pan_serena.mp3",
       "sentences": [
         {
-          "text": "El huevo es un producto natural y delicioso.",
-          "image": "huevo_cognate_sentence_1769751908.jpg"
-        }
-      ]
-    },
-    {
-      "spanish_full": "Helado",
-      "article": "El",
-      "english": "",
-      "image": "icecream.jpg",
-      "audio": "el_helado_serena.mp3",
-      "sentences": [
+          "text": "El pan es muy rico.",
+          "image": "pan_sentence_0_1769246265.jpg"
+        },
         {
-          "text": "El helado es de chocolate.",
-          "image": ""
-        }
-      ]
-    },
-    {
-      "spanish_full": "Botella",
-      "article": "La",
-      "english": "",
-      "image": "bottle.jpg",
-      "audio": "la_botella_serena.mp3",
-      "sentences": []
-    },
-    {
-      "spanish_full": "casa",
-      "article": "La",
-      "english": "",
-      "image": "thehouse.jpg",
-      "audio": "la_casa_serena.mp3",
-      "sentences": [
-        {
-          "text": "La casa de mi familia es especial.",
-          "image": "casa_cognate_sentence_1769752152.jpg"
+          "text": "El pan del café es delicioso.",
+          "image": "pan_cognate_sentence_1769752634.jpg"
         }
       ]
     },
@@ -141,21 +110,12 @@
       "audio": "el_libro_serena.mp3",
       "sentences": [
         {
+          "text": "El libro es muy interesante.",
+          "image": "libro_sentence_0_1769246021.jpg"
+        },
+        {
           "text": "El libro tiene información interesante.",
           "image": "libro_cognate_sentence_1769752264.jpg"
-        }
-      ]
-    },
-    {
-      "spanish_full": "puerta",
-      "article": "La",
-      "english": "",
-      "image": "thedoor.jpg",
-      "audio": "la_puerta_serena.mp3",
-      "sentences": [
-        {
-          "text": "La puerta del restaurante es diferente.",
-          "image": ""
         }
       ]
     },
@@ -166,6 +126,10 @@
       "image": "thetable.jpg",
       "audio": "la_mesa_serena.mp3",
       "sentences": [
+        {
+          "text": "La mesa es de madera.",
+          "image": "mesa_sentence_0_1769246110.jpg"
+        },
         {
           "text": "La mesa del restaurante es elegante.",
           "image": "mesa_cognate_sentence_1769752397.jpg"
@@ -180,86 +144,12 @@
       "audio": "la_silla_serena.mp3",
       "sentences": [
         {
+          "text": "La silla es muy cómoda.",
+          "image": "silla_sentence_0_1769246121.jpg"
+        },
+        {
           "text": "La silla del restaurante es elegante.",
           "image": "silla_cognate_sentence_1769752424.jpg"
-        }
-      ]
-    },
-    {
-      "spanish_full": "coche",
-      "article": "El",
-      "english": "",
-      "image": "thecar.jpg",
-      "audio": "el_coche_serena.mp3",
-      "sentences": [
-        {
-          "text": "El coche tiene un motor excelente.",
-          "image": "coche_cognate_sentence_1769752449.jpg"
-        }
-      ]
-    },
-    {
-      "spanish_full": "pan",
-      "article": "El",
-      "english": "",
-      "image": "bread.jpg",
-      "audio": "el_pan_serena.mp3",
-      "sentences": [
-        {
-          "text": "El pan del café es delicioso.",
-          "image": "pan_cognate_sentence_1769752634.jpg"
-        }
-      ]
-    },
-    {
-      "spanish_full": "leche",
-      "article": "La",
-      "english": "",
-      "image": "milk.png",
-      "audio": "la_leche_serena.mp3",
-      "sentences": [
-        {
-          "text": "La leche es un producto natural.",
-          "image": "leche_cognate_sentence_1769752658.jpg"
-        }
-      ]
-    },
-    {
-      "spanish_full": "manzana",
-      "article": "La",
-      "english": "",
-      "image": "theapple.jpg",
-      "audio": "la_manzana_serena.mp3",
-      "sentences": [
-        {
-          "text": "La manzana es una fruta natural y deliciosa.",
-          "image": "manzana_cognate_sentence_1769752718.jpg"
-        }
-      ]
-    },
-    {
-      "spanish_full": "reloj",
-      "article": "El",
-      "english": "",
-      "image": "theclock.jpg",
-      "audio": "el_reloj_serena.mp3",
-      "sentences": [
-        {
-          "text": "El reloj es un objeto importante y personal.",
-          "image": "reloj_cognate_sentence_1769752910.jpg"
-        }
-      ]
-    },
-    {
-      "spanish_full": "llave",
-      "article": "La",
-      "english": "",
-      "image": "thekey.jpg",
-      "audio": "la_llave_serena.mp3",
-      "sentences": [
-        {
-          "text": "La llave del hotel está en la mesa.",
-          "image": ""
         }
       ]
     },
@@ -273,45 +163,116 @@
         {
           "text": "La cama del hospital es muy especial.",
           "image": ""
+        },
+        {
+          "text": "La cama es muy cómoda.",
+          "image": "cama_sentence_0_1769246969.jpg"
         }
       ]
     },
     {
-      "spanish_full": "Perro",
-      "article": "El",
+      "spanish_full": "puerta",
+      "article": "La",
       "english": "",
-      "image": "dog.jpg",
-      "audio": "el_perro_serena.mp3",
+      "image": "thedoor.jpg",
+      "audio": "la_puerta_serena.mp3",
       "sentences": [
         {
-          "text": "El perro es un animal excelente.",
-          "image": ""
+          "text": "La puerta está abierta.",
+          "image": "puerta_sentence_0_1769246077.jpg"
+        },
+        {
+          "text": "La puerta del restaurante es diferente.",
+          "image": "puerta_cognate_sentence_1769752366.jpg"
         }
       ]
     },
     {
-      "spanish_full": "Parque",
-      "article": "El",
+      "spanish_full": "llave",
+      "article": "La",
       "english": "",
-      "image": "thepark.jpg",
-      "audio": "el_parque_serena.mp3",
+      "image": "thekey.jpg",
+      "audio": "la_llave_serena.mp3",
       "sentences": [
         {
-          "text": "El parque natural es enorme.",
+          "text": "La llave del hotel está en la mesa.",
           "image": ""
+        },
+        {
+          "text": "La llave está en la mesa.",
+          "image": "llave_sentence_0_1769246857.jpg"
         }
       ]
     },
     {
-      "spanish_full": "Restaurante",
+      "spanish_full": "coche",
       "article": "El",
       "english": "",
-      "image": "therestaurant_primary.jpg",
-      "audio": "el_restaurante_serena.mp3",
+      "image": "thecar.jpg",
+      "audio": "el_coche_serena.mp3",
       "sentences": [
         {
-          "text": "El restaurante tiene un menú especial.",
+          "text": "El coche es rojo.",
+          "image": "coche_sentence_0_1769246132.jpg"
+        },
+        {
+          "text": "El coche tiene un motor excelente.",
+          "image": "coche_cognate_sentence_1769752449.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Zapato",
+      "article": "El",
+      "english": "",
+      "image": "the_shoes.jpg",
+      "audio": "el_zapato_serena.mp3",
+      "sentences": [
+        {
+          "text": "El zapato es muy bonito.",
+          "image": "zapato_sentence_0_1769252463.jpg"
+        },
+        {
+          "text": "\"El zapato tiene un diseño excelente.\"",
+          "image": "zapato_cognate_sentence_1769592314.jpg"
+        },
+        {
+          "text": "El zapato tiene un color diferente.",
+          "image": "zapato_cognate_sentence_1769753127.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "reloj",
+      "article": "El",
+      "english": "",
+      "image": "theclock.jpg",
+      "audio": "el_reloj_serena.mp3",
+      "sentences": [
+        {
+          "text": "El reloj marca la hora.",
+          "image": "reloj_sentence_0_1769246836.jpg"
+        },
+        {
+          "text": "El reloj es un objeto importante y personal.",
+          "image": "reloj_cognate_sentence_1769752910.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Teléfono",
+      "article": "El",
+      "english": "",
+      "image": "thetelephone.png",
+      "audio": "el_telefono_serena.mp3",
+      "sentences": [
+        {
+          "text": "El teléfono es un objeto importante.",
           "image": ""
+        },
+        {
+          "text": "El teléfono suena mucho.",
+          "image": "teléfono_sentence_0_1769244612.jpg"
         }
       ]
     },
@@ -333,68 +294,16 @@
       ]
     },
     {
-      "spanish_full": "Plato",
-      "article": "El",
-      "english": "",
-      "image": "",
-      "audio": "el_plato_serena.mp3",
-      "sentences": [
-        {
-          "text": "Me gusta el plato de chocolate.",
-          "image": ""
-        }
-      ]
-    },
-    {
-      "spanish_full": "Taza",
-      "article": "La",
-      "english": "",
-      "image": "",
-      "audio": "la_taza_serena.mp3",
-      "sentences": [
-        {
-          "text": "La taza tiene café caliente.",
-          "image": "taza_sentence_0_1769250381.jpg"
-        }
-      ]
-    },
-    {
-      "spanish_full": "Zapato",
-      "article": "El",
-      "english": "",
-      "image": "",
-      "audio": "el_zapato_serena.mp3",
-      "sentences": [
-        {
-          "text": "\"El zapato tiene un diseño excelente.\"",
-          "image": ""
-        },
-        {
-          "text": "El zapato tiene un color diferente.",
-          "image": ""
-        }
-      ]
-    },
-    {
-      "spanish_full": "Queso",
-      "article": "El",
-      "english": "",
-      "image": "the_cheese.jpg",
-      "audio": "el_queso_serena.mp3",
-      "sentences": [
-        {
-          "text": "\"El queso es parte de la pasta.\"",
-          "image": ""
-        }
-      ]
-    },
-    {
       "spanish_full": "manzana",
       "article": "",
-      "english": "apple",
-      "image": "",
-      "audio": "",
+      "english": "",
+      "image": "theapple.jpg",
+      "audio": "la_manzana_serena.mp3",
       "sentences": [
+        {
+          "text": "Me gusta la manzana.",
+          "image": "manzana_sentence_0_1769265903.jpg"
+        },
         {
           "text": "La manzana es una fruta natural y deliciosa.",
           "image": "manzana_cognate_sentence_1769753392.jpg"
@@ -404,13 +313,188 @@
     {
       "spanish_full": "queso",
       "article": "",
-      "english": "cheese",
-      "image": "",
-      "audio": "",
+      "english": "",
+      "image": "the_cheese.jpg",
+      "audio": "el_queso_serena.mp3",
       "sentences": [
         {
           "text": "El queso es un producto natural.",
           "image": ""
+        },
+        {
+          "text": "Me encanta el queso.",
+          "image": "queso_sentence_0_1769265974.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Helado",
+      "article": "El",
+      "english": "",
+      "image": "icecream.jpg",
+      "audio": "el_helado_serena.mp3",
+      "sentences": [
+        {
+          "text": "El helado es de chocolate.",
+          "image": "helado_sentence_0_1769245133.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Pizza",
+      "article": "La",
+      "english": "",
+      "image": "thepizza.jpg",
+      "audio": "la_pizza_serena.mp3",
+      "sentences": [
+        {
+          "text": "La pizza es mi comida favorita.",
+          "image": ""
+        },
+        {
+          "text": "La pizza tiene queso y tomates.",
+          "image": "pizza_sentence_0_1769244981.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Chocolate",
+      "article": "El",
+      "english": "",
+      "image": "chocolate.jpg",
+      "audio": "el_chocolate_serena.mp3",
+      "sentences": [
+        {
+          "text": "El chocolate es mi dulce favorito.",
+          "image": "chocolate_sentence_0_1769244579.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Banana",
+      "article": "La",
+      "english": "",
+      "image": "thebanana.png",
+      "audio": "la_banana_serena.mp3",
+      "sentences": [
+        {
+          "text": "La banana es una fruta tropical.",
+          "image": ""
+        },
+        {
+          "text": "La banana es amarilla y dulce.",
+          "image": "banana_sentence_0_1769251535.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Parque",
+      "article": "El",
+      "english": "",
+      "image": "thepark.jpg",
+      "audio": "el_parque_serena.mp3",
+      "sentences": [
+        {
+          "text": "El parque natural es enorme.",
+          "image": ""
+        },
+        {
+          "text": "Vamos al parque hoy.",
+          "image": "parque_sentence_0_1769249532.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Restaurante",
+      "article": "El",
+      "english": "",
+      "image": "therestaurant_primary.jpg",
+      "audio": "el_restaurante_serena.mp3",
+      "sentences": [
+        {
+          "text": "El restaurante tiene un menú especial.",
+          "image": ""
+        },
+        {
+          "text": "El restaurante tiene comida rica.",
+          "image": "restaurante_sentence_0_1769249545.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Hospital",
+      "article": "El",
+      "english": "",
+      "image": "thehospital.jpg",
+      "audio": "el_hospital_serena.mp3",
+      "sentences": [
+        {
+          "text": "El hospital ayuda a las personas.",
+          "image": "hospital_sentence_0_1769244483.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Huevo",
+      "article": "El",
+      "english": "",
+      "image": "egg.png",
+      "audio": "el_huevo_serena.mp3",
+      "sentences": [
+        {
+          "text": "El huevo es blanco y redondo.",
+          "image": "huevo_sentence_0_1769245112.jpg"
+        },
+        {
+          "text": "El huevo es un producto natural y delicioso.",
+          "image": "huevo_cognate_sentence_1769751908.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Plato",
+      "article": "El",
+      "english": "",
+      "image": "the_plate.jpg",
+      "audio": "el_plato_serena.mp3",
+      "sentences": [
+        {
+          "text": "El plato tiene comida deliciosa.",
+          "image": "plato_sentence_0_1769250361.jpg"
+        },
+        {
+          "text": "Me gusta el plato de chocolate.",
+          "image": "plato_cognate_sentence_1769591924.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Taza",
+      "article": "La",
+      "english": "",
+      "image": "taza.jpg",
+      "audio": "la_taza_serena.mp3",
+      "sentences": [
+        {
+          "text": "La taza tiene café caliente.",
+          "image": "taza_sentence_0_1769250381.jpg"
+        }
+      ]
+    },
+    {
+      "spanish_full": "Botella",
+      "article": "La",
+      "english": "",
+      "image": "bottle.jpg",
+      "audio": "la_botella_serena.mp3",
+      "sentences": [
+        {
+          "text": "La botella de agua mineral está aquí.",
+          "image": ""
+        },
+        {
+          "text": "La botella está llena.",
+          "image": "botella_sentence_0_1769245358.jpg"
         }
       ]
     }
